@@ -19,4 +19,55 @@ body{
 .container{
   /* Now all the item inside the container are flex, they will look like a row */
   display: flex;
+  /* vw - viewport width - using 90 out of 100*/
+  width: 90vw;
+}
+.panel{
+  /* TODO:cover */
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* viewport height- vh, viewport width - ww */
+  height: 80vh;
+  border-radius: 25px;
+  cursor: pointer;
+  /* flexwidth, initial value of 0.5, they will be even */
+  flex: 0.5;
+  margin: 10px;
+  /* we want the position of the h3 inside absolute so we have to make the panel realtive*/
+  position: relative;
+  /* We're going to add a transition when we click the img and it will expand */
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3{
+  font-size: 24px;
+  position: absolute;
+  /* the title will display in the bottom left */
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  /* we will hide the title until the card is selected */
+  opacity: 0;
+}
+.panel.active{
+  /* The size of the active card will increase*/
+  flex: 5;
+}
+.panel.active h3{
+  /* the title is visible again */
+  opacity: 1;
+}
+
+@media (max-width: 480px){
+  /* When the screen size is smaller than 480px the container will take more space */
+  .container{
+    width: 100vw;
+  }
+
+  /* We will hide the last 2 panels when the screen size is smaller than 480px */
+  /* nth-of-type, takes the number of panels so you can do something with them */
+  .panel:nth-of-type(4), .panel:nth-of-type(5){
+    display: none;
+  }
 }
