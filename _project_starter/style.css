@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  /* To center */
+  display: flex;
+  /* Every item in the html will be display in a sigle column */
+  flex-direction: column;
+  /* to center the items center */
+  align-items: center;
+  justify-content: center;
+  /* view per hight, vh - the entire height of the browser */
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
