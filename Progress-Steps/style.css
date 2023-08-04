@@ -32,6 +32,22 @@ body{
   width: 350px;
 }
 .progress-container::before{
+  /* we need set it to empty string*/
+  content: '';
+  background-color: lightgray;
+  /* absolute within the progress container which it's position relative*/
+  position: absolute;
+  /* we want it in the middle vertically */
+  top: 50%;
+  left: 0;
+  /* Just to put the line in the middle */
+  transform: translateY(-50%);
+  height: 4px;
+  /* the witdh will be the progress bar */
+  width: 100%;
+  z-index: -1;
+}
+.progress{
   background-color: red;
   /* absolute within the progress container which it's position relative*/
   position: absolute;
@@ -42,8 +58,23 @@ body{
   transform: translateY(-50%);
   height: 4px;
   /* the witdh will be the progress bar */
-  width: 50%;
+  width: 0%;
   z-index: -1;
   /* the transition to look smoother */
   transition: 0.4 ease;
+}
+
+.circle{
+  background-color: lightgray;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  /* Align the items vertically */
+  align-items: center;
+  /* align the content horizontal */
+  justify-content: center;
+  border: 3px solid grey;
+  transition: .4s ease;
 }
