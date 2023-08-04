@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+/* we're creating global variables for use  */
+:root{
+  --fill-color: #a10300;
+  --empty-color: #e6e6e6;
+}
+
 *{
   box-sizing: border-box;
 }
@@ -34,7 +40,8 @@ body{
 .progress-container::before{
   /* we need set it to empty string*/
   content: '';
-  background-color: lightgray;
+  /* We're using the global variable color */
+  background-color: var(--empty-color);
   /* absolute within the progress container which it's position relative*/
   position: absolute;
   /* we want it in the middle vertically */
@@ -48,7 +55,7 @@ body{
   z-index: -1;
 }
 .progress{
-  background-color: red;
+  background-color: var(--fill-color);
   /* absolute within the progress container which it's position relative*/
   position: absolute;
   /* we want it in the middle vertically */
@@ -65,7 +72,7 @@ body{
 }
 
 .circle{
-  background-color: lightgray;
+  background-color: var(--empty-color);
   color: #999;
   border-radius: 50%;
   height: 30px;
@@ -77,4 +84,8 @@ body{
   justify-content: center;
   border: 3px solid grey;
   transition: .4s ease;
+}
+
+.circle.active{
+  border-color: var(--fill-color);
 }
