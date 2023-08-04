@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+body{
+  
+  font-family: 'Montserrat', sans-serif;
+  /* To center */
+  display: flex;
+  /* to center the items center */
+  align-items: center;
+  justify-content: center;
+  /* view per hight, vh - the entire height of the browser */
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container{
+  text-align: center;
+}
+
+.progress-container{
+  display: flex;
+  /* The numbers will have space between them */
+  justify-content: space-between;
+  /* relative so we can position other things inside*/
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  /* we can adjust this size */
+  width: 350px;
+}
+.progress-container::before{
+  background-color: red;
+  /* absolute within the progress container which it's position relative*/
+  position: absolute;
+  /* we want it in the middle vertically */
+  top: 50%;
+  left: 0;
+  /* Just to put the line in the middle */
+  transform: translateY(-50%);
+  height: 4px;
+  /* the witdh will be the progress bar */
+  width: 50%;
+  z-index: -1;
+  /* the transition to look smoother */
+  transition: 0.4 ease;
+}
