@@ -61,3 +61,7 @@ img{
 h2{
   font-weight: bold;
 }
+.nav-pills .nav-link.active{
+  background-color: #FFFBEB;
+  border-top-right-radius: 15px;
+}
