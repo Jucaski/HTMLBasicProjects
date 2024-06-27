@@ -51,7 +51,8 @@ table{
   width: 100%;
 }
 img{
-  width: 210px;
+  width: 204px;
+  border-radius: 76px;
 }
 .body-container{
   margin-top: 45px;
